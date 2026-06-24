@@ -13,21 +13,19 @@
 
 ---
 
-## 고유 명칭 약속
+## 약어 사전
 
-| 용어 | 의미 |
-| --- | --- |
-| `IP` | 영화/외부 캐릭터 (슈렉, 마리오, 쿵푸팬더 등) |
-| `Echo` | 서비스 자체 마스코트(토끼) |
+이름에 쓰는 약어는 아래로 통일한다. 새 약어를 만들면 반드시 이 표에 추가한다.
 
-## 디바이스 약어
+| 약어 | 풀이 | 의미 |
+| --- | --- | --- |
+| `IP` | Intellectual Property | 영화/외부 캐릭터 (슈렉, 마리오 등) |
+| `Echo` | — | 서비스 자체 마스코트(토끼) |
+| `Stats` | Statistics | 통계·기록 수치 (세션 수, 거리, 단어 등) |
+| `MO` | Mobile | 모바일 |
+| `TA` | Tablet | 태블릿 |
 
-| 약어 | 의미 |
-| --- | --- |
-| `MO` | 모바일 |
-| `TA` | 태블릿 |
-
-- 디바이스별 변형은 이름 **끝**에 붙인다. 예: `Thumbnail_IP_MO` / `Thumbnail_IP_TA`, `Stats_Summary_MO` / `Stats_Summary_TA`
+- 디바이스별 변형(`MO`/`TA`)은 이름 **끝**에 붙인다. 예: `Thumbnail_IP_MO` / `Thumbnail_IP_TA`, `Stats_Summary_MO` / `Stats_Summary_TA`
 
 ---
 
