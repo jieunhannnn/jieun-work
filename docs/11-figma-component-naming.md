@@ -31,7 +31,7 @@
 
 ## 타입 접두어 목록
 
-`Card_` `Avatar_` `Profile_` `Node_` `Icon_` `Logo_` `Background_` `Map_` `Dashboard_` `Face_` `Badge_` `Row_` `Header_` `Ring_` `Collection_` `Bar_` `Thumbnail_` `Stats_` `Billboard`
+`Card_` `Profile_` `Node_` `Icon_` `Logo_` `Background_` `Map_` `Dashboard_` `Face_` `Badge_` `Row_` `Header_` `Ring_` `Collection_` `Bar_` `Thumbnail_` `Stats_` `Billboard`
 
 ---
 
