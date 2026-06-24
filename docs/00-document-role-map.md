@@ -12,3 +12,10 @@
 
 - 로그에서 같은 판단·실수가 반복되면 → `docs/`의 주제 문서로 정리
 - 로그는 "그날 무슨 일이 있었나", 문서는 "다음에 어떻게 하면 되나"
+
+## 주제 문서 목록
+
+| 문서 | 내용 |
+| --- | --- |
+| `docs/10-figma-thumbnail-automation.md` | 운영 썸네일 자동화 (드라이브→Apps Script→Figma) |
+| `docs/11-figma-component-naming.md` | 피그마 마스터 컴포넌트 네이밍 규칙 |
