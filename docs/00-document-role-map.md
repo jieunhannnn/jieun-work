@@ -19,3 +19,4 @@
 | --- | --- |
 | `docs/10-figma-thumbnail-automation.md` | 운영 썸네일 자동화 (드라이브→Apps Script→Figma) |
 | `docs/11-figma-component-naming.md` | 피그마 마스터 컴포넌트 네이밍 규칙 |
+| `docs/12-echo-character-bible.md` | Echo 캐릭터 이미지 생성용 마스터 프롬프트 (캐릭터 바이블 v1.1) |
