@@ -23,13 +23,34 @@ for (const p of BASE_IMAGES) {
   }
 }
 
+import { homedir } from "os";
+const DOWNLOAD_DIR = join(homedir(), "Downloads"); // 다운로드 저장 위치
+
 const ctx = await chromium.launchPersistentContext(USER_DATA_DIR, {
   headless: false,
   viewport: { width: 1280, height: 900 },
+  acceptDownloads: true,
+  downloadsPath: DOWNLOAD_DIR,
   args: ["--disable-blink-features=AutomationControlled"],
 });
 
+// 페이지에서 다운로드가 일어나면 실제 Downloads 폴더에 저장
+ctx.on("page", (p) => {
+  p.on("download", async (d) => {
+    const dest = join(DOWNLOAD_DIR, d.suggestedFilename());
+    await d.saveAs(dest);
+    console.log(`\x1b[32m[저장됨]\x1b[0m ${dest}`);
+  });
+});
+
 const page = ctx.pages()[0] ?? (await ctx.newPage());
+
+// 현재 페이지의 다운로드도 Downloads 폴더에 저장
+page.on("download", async (d) => {
+  const dest = join(DOWNLOAD_DIR, d.suggestedFilename());
+  await d.saveAs(dest);
+  console.log(`\x1b[32m[저장됨]\x1b[0m ${dest}`);
+});
 
 log("ChatGPT 여는 중...");
 await page.goto("https://chatgpt.com/", { waitUntil: "domcontentloaded" });
