@@ -19,20 +19,24 @@ ChatGPT(무료 웹) 새 채팅을 자동으로 열고 **기준 이미지 첨부 
 ## 사전 준비 (사람이 1회)
 
 ```bash
-mkdir image-starter && cd image-starter
+mkdir echo-image-starter && cd echo-image-starter
 npm init -y
 npm pkg set type=module
 npm install playwright
 npx playwright install chromium
-```
 
-그리고 `base/` 폴더에 기준 이미지 1~4장을 넣는다.
+# 기준(베이스) 이미지 3장 내려받기
+mkdir -p base
+curl -L -o base/echo-base-front.png https://raw.githubusercontent.com/jieunhannnn/jieun-work/main/tools/echo-image-starter/base/echo-base-front.png
+curl -L -o base/echo-base-run.png   https://raw.githubusercontent.com/jieunhannnn/jieun-work/main/tools/echo-image-starter/base/echo-base-run.png
+curl -L -o base/echo-base-cheer.png https://raw.githubusercontent.com/jieunhannnn/jieun-work/main/tools/echo-image-starter/base/echo-base-cheer.png
+```
 
 ---
 
 ## 파일 1: `config.js`
 
-> 여기만 본인 캐릭터에 맞게 바꾸면 된다. (이미지 경로 + 마스터 프롬프트)
+> 이미 Echo 캐릭터 기준으로 채워져 있다. 다른 캐릭터에 쓰려면 이미지 경로와 마스터 프롬프트만 바꾸면 된다.
 
 ```js
 import { fileURLToPath } from "url";
@@ -42,17 +46,18 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // 자동 첨부할 기준(베이스) 이미지 — base/ 폴더 안의 파일들
 export const BASE_IMAGES = [
-  join(__dirname, "base", "ref-1.png"),
-  join(__dirname, "base", "ref-2.png"),
-  join(__dirname, "base", "ref-3.png"),
+  join(__dirname, "base", "echo-base-front.png"),
+  join(__dirname, "base", "echo-base-run.png"),
+  join(__dirname, "base", "echo-base-cheer.png"),
 ];
 
 // 채팅에 자동 입력될 마스터 프롬프트. 맨 끝 "Action: " 뒤에 커서가 놓인다.
-export const MASTER_PROMPT = `(여기에 캐릭터 가이드/규칙을 적는다. 상세 가이드가 깃 등에 있으면 링크로 줘도 됨 — AI는 텍스트 링크는 읽는다.)
+export const MASTER_PROMPT = `이 캐릭터 'Echo'의 상세 가이드를 먼저 읽어줘:
+https://github.com/jieunhannnn/jieun-work/blob/main/docs/character-echo/20-echo-character-bible.md
 
-첨부한 이미지들이 이 캐릭터의 절대 기준(모델시트)이야.
-새 캐릭터를 만들지 말고, 첨부 이미지와 100% 동일한 캐릭터가 다른 자세/표정을 연기하는 모습을 그려줘.
-글 설명과 첨부 이미지가 충돌하면 무조건 첨부 이미지를 따라.
+그리고 첨부한 이미지 3장이 이 캐릭터의 절대 기준(모델시트)이야.
+새 토끼를 만들지 말고, 첨부 이미지와 100% 동일한 Echo가 다른 자세/표정을 연기하는 모습을 그려줘.
+글 설명과 첨부 이미지가 충돌하면 무조건 첨부 이미지를 따라. (가이드 링크의 비율·컬러·금지사항을 모두 지킬 것)
 
 아래 Action으로 그려줘.
 
