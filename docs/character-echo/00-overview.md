@@ -123,7 +123,7 @@ https://github.com/jieunhannnn/jieun-work/blob/main/docs/character-echo/20-echo-
 **산출물**
 - `tools/echo-image-starter/` — Playwright 기반 자동화 툴 (`start.js`, `config.js`, `Echo 시작.command`, `base/` 이미지 3장)
 
-**다른 팀도 써보세요 🙌**
+**다른 팀도 활용 가능 🙌**
 - 이 툴을 누구나 재현할 수 있게 **빌드 명세서(md)** 로 정리해뒀다. 본인 AI(Claude Code/Codex/Cursor 등)에 아래 링크를 주고 "이대로 만들어줘"라고만 하면 된다.
   - 명세서: `tools/echo-image-starter/BUILD-WITH-AI.md`
   - AI에게 줄 raw 링크: `https://raw.githubusercontent.com/jieunhannnn/jieun-work/main/tools/echo-image-starter/BUILD-WITH-AI.md`
